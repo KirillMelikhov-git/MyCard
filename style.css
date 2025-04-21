@@ -1,108 +1,129 @@
 body {
   background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
   background-attachment: fixed;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
 }
 
 .card {
-  width: 500px;
-  height: 500px;
+  max-width: 500px;
+  width: 100%;
   background-color: white;
-  margin-top: 150px;
-  margin-bottom: 50px;
   border-radius: 20px;
+  padding: 90px 30px 30px;
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.profile-card_img {
+.profile-img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  object-fit: cover;
   position: absolute;
   top: -75px;
+  border: 5px solid white;
 }
 
-.profile-card_img img {
-  width: 150px;
-  border-radius: 50%;
+h1 {
+  margin: 0 0 10px;
+  font-size: 1.8rem;
 }
 
-.name {
-  position: absolute;
-  top: 70px;
-}
-
-.overview {
-  position: absolute;
-  top: 110px;
+.profession {
+  color: #666;
+  margin: 0;
 }
 
 .location {
-  position: absolute;
-  top: 150px;
   display: flex;
   align-items: center;
+  gap: 8px;
+  color: #555;
 }
 
-.loc_img img {
+.location img {
   width: 20px;
-  padding-right: 10px;
+  height: 20px;
+}
+
+.text {
+  margin: 20px 0 30px;
+}
+
+.text h3 {
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn {
-  position: absolute;
-  display: flex;
-  top: 250px;
-  gap: 20px;
-}
-
-.btn_1 {
-  width: 140px;
-  height: 35px;
+  padding: 8px 20px;
   border-radius: 10px;
   color: white;
-  transition: 0.2s linear;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  min-width: 140px;
+  text-align: center;
+}
+
+.btn-primary {
   background: #1da1f2;
-  border: 0;
-  font-size: 14px;
 }
 
-.btn_1:hover {
-  box-shadow: 0 0 0 2px white, 0 0 0 4px #1da1f2;
-}
-
-.btn_2 {
-  width: 140px;
-  height: 35px;
-  border-radius: 10px;
-  color: white;
-  transition: 0.2s linear;
+.btn-secondary {
   background: #FF6B6B;
-  border: 0;
-  font-size: 14px;
 }
 
-.btn_2:hover {
-  box-shadow: 0 0 0 2px white, 0 0 0 4px #FF6B6B;
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.icon {
-  position: absolute;
+.social-links {
   display: flex;
-  top: 360px;
-  gap: 20px;
+  gap: 15px;
+  justify-content: center;
 }
 
-.icon img {
+.social-links img {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
+  transition: transform 0.2s ease;
 }
 
-.icon img:hover {
-  scale: 1.2;
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+  .card {
+      padding: 80px 20px 20px;
+  }
+  
+  .actions {
+      flex-direction: column;
+      width: 100%;
+  }
+  
+  .btn {
+      width: 100%;
+  }
 }
